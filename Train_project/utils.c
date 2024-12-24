@@ -36,24 +36,14 @@ int isValidTime(const char* time)
     return hour >= 0 && hour < 24 && minute >= 0 && minute < 60; // 时间范围校验
 }
 
-void getInput(const char* prompt, char* buffer, int (*validate)(const char*))
+//通用工具函数        (打印提示信息，用户输入数据，有效性规则如isValidtime)
+void getValidatedInput(const char* prompt, char* buffer, int (*validate)(const char*)) 
 {
     do {
         printf("%s", prompt);
         scanf("%s", buffer);
-        if (!validate(buffer))
+        if (!validate(buffer)) 
         {
-            printf("输入格式无效，请重试。\n");
-        }
-    } while (!validate(buffer));
-}
-
-//通用工具函数
-void getValidatedInput(const char* prompt, char* buffer, int (*validate)(const char*)) {
-    do {
-        printf("%s", prompt);
-        scanf("%s", buffer);
-        if (!validate(buffer)) {
             printf("输入格式无效，请重试。\n");
         }
     } while (!validate(buffer));
