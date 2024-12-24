@@ -25,4 +25,6 @@ void countByDestination();	//按终点统计车次数
 
 void loadTrainsFromFile();	// 显示所有火车时刻信息
 
+void writeTestDataToFile();	//测试数据
+
 #endif 

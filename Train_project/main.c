@@ -9,6 +9,7 @@ void mainMenu();
 
 int main()
 {
+    writeTestDataToFile();      //测试数据
     ensureDataFolderExists();   //创建数据文件夹
     loadTrainsToMemory();       // 从文件加载火车信息到内存
     mainMenu();	// 显示主菜单
